@@ -1,13 +1,18 @@
-nome = ["a", "b", "c"]
-valores = []
-for numero in nome:
-    valor = int(input(f"Digite o valor de {numero}: "))
-    valores.append(valor)
-if len(set(valores)) == 1:
-    print ("é um triângulo equilátero")
-elif len(set(valores)) == 2:
-    print ("é um triângulo isósceles")
-elif len(set(valores)) == 3:
-    print ("é um triângulo escaleno")
+"""ESTE CÓDIGO DEVE FAZER A VERIFICAÇÃO SE OS VALORES FORMAM UM TRIÂNGULO E DO TIPO DE TRIÂNGULO"""
+# Inserção dos valores
+a = int(input("Digite o valor de a: "))
+b = int(input("Digite o valor de b: "))
+c = int(input("Digite o valor de c: "))
+
+# Condicional para verificar se forma triângulo
+# Caso a condição de um valor ser menor que a soma dos outros dois valores seja verdadeira retorna o tipo de triângulo
+if a < b + c and b < a + c and c < a + b:
+    if a == b == c:
+        print("equilátero")
+    elif a == b or b == c or a == c:
+        print("isósceles")
+    else:
+        print("escaleno")
+# Caso falso retorna como não forma triângulo
 else:
-    print ("não é um triângulo")
+    print("Não forma triângulo")
